@@ -17,6 +17,19 @@ export class Logger {
 
   constructor() {
     this.config = {};
+    this.setEvent = this.setLevel.bind(this);
+    this.reset = this.reset.bind(this);
+    this.setService = this.setService.bind(this);
+    this.setRequestId = this.setRequestId.bind(this);
+    this.setHttp = this.setHttp.bind(this);
+    this.setUser = this.setUser.bind(this);
+    this.setEvent = this.setEvent.bind(this);
+    this.getConfig = this.getConfig.bind(this);
+    this.trace = this.trace.bind(this);
+    this.debug = this.debug.bind(this);
+    this.info = this.info.bind(this);
+    this.warn = this.warn.bind(this);
+    this.error = this.error.bind(this);
     this.pino = pino({
       base: null,
       timestamp: false,
