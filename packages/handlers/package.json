@@ -1,6 +1,6 @@
 {
   "name": "@cloud-burger/handlers",
-  "version": "0.0.4",
+  "version": "1.0.0",
   "description": "> TODO: description",
   "author": "Daniel Aguiar <daniel_aguiar_alves@hotmail.com>",
   "homepage": "https://github.com/cloud-burger/packages#readme",
@@ -27,6 +27,7 @@
     "url": "https://github.com/cloud-burger/packages/issues"
   },
   "dependencies": {
+    "@cloud-burger/logger": "^0.0.7",
     "express": "^4.19.2"
   },
   "devDependencies": {

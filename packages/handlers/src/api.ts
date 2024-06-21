@@ -1,3 +1,4 @@
+import logger from '@cloud-burger/logger';
 import { Request, Response } from 'express';
 import InternalServerError from './errors/internal-server-error';
 import { Controller } from './utils/models';
@@ -22,7 +23,7 @@ export class ApiHandler {
         return response.status(error.statusCode).send(error.toObject());
       }
 
-      // logger.error(error)
+      logger.error(error);
       return response.status(500).send(new InternalServerError().toObject());
     }
   }
