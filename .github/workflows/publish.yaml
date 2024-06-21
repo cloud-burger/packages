@@ -1,0 +1,45 @@
+name: 'Publish Package'
+
+on:
+  workflow_dispatch:
+    inputs:
+      package:
+        type: choice
+        description: Package to Publish
+        options:
+          - handlers
+          - utils
+          - logger
+      version:
+        type: choice
+        description: Version Increment
+        options:
+          - patch
+          - minor
+          - major
+          - prepatch
+          - preminor
+          - premajor
+          - prerelease
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./packages/${{ github.event.inputs.package }}
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+      - run: |
+          git config --global user.name "${GITHUB_ACTOR}"
+          git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+      - id: version
+        run: echo "version=$(npm version --git-tag-version=false ${{ github.event.inputs.version }})" >> $GITHUB_OUTPUT
+      - run: git add package.json && git commit -m "publish ${{ github.event.inputs.package }} ${{ steps.version.outputs.version }}"
+      - run: npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - run: git push

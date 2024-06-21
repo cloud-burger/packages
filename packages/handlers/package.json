@@ -21,7 +21,7 @@
     "url": "git+https://github.com/cloud-burger/packages.git"
   },
   "scripts": {
-    "test": "node ./__tests__/@clb/handlers.test.js"
+    "tsc": "tsc"
   },
   "bugs": {
     "url": "https://github.com/cloud-burger/packages/issues"
