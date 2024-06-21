@@ -1,11 +1,41 @@
 # `@cloud-burger/utils`
 
-> TODO: description
+Lib compartilhada de validações de schema e dados.
 
 ## Usage
 
-```
-const utils = require('@cloud-burger/utils');
+### Schema validator
 
-// TODO: DEMONSTRATE API
+```typescript
+import { validateSchema } from '@cloud-burger/utils'
+
+const schema = Joi.object({
+  name: Joi.string().required()
+});
+
+const user = {
+  name: 'Daniel'
+}
+
+const { data, errors } = validateSchema(schema, user);
+
+// data = user
+// errors = undefined
+```
+
+```typescript
+import { validateSchema } from '@cloud-burger/utils'
+
+const schema = Joi.object({
+  name: Joi.string().required()
+});
+
+const user = {
+  name: undefined
+}
+
+const { data, errors } = validateSchema(schema, user);
+
+// data = undefined
+// errors = [{ name: 'name', reason: 'name must not be empty', value: undefined }]
 ```

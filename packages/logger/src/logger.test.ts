@@ -1,11 +1,10 @@
 import { randomUUID } from 'crypto';
 import { Request } from 'express';
-import { Logger } from './logger';
+import logger from './index';
 
 describe('Logger', () => {
   it('should log success', () => {
-    const logger = new Logger();
-
+    logger.reset();
     logger.setLevel('debug');
     logger.setEvent('core', {
       headers: {
