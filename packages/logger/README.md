@@ -1,11 +1,11 @@
-# `@clb/logger`
+# `@cloud-burger/logger`
 
 > TODO: description
 
 ## Usage
 
 ```
-const logger = require('@clb/logger');
+const logger = require('@cloud-burger/logger');
 
 // TODO: DEMONSTRATE API
 ```

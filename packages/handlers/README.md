@@ -1,11 +1,11 @@
-# `@clb/handlers`
+# `@cloud-burger/handlers`
 
 > TODO: description
 
 ## Usage
 
 ```
-const handlers = require('@clb/handlers');
+const handlers = require('@cloud-burger/handlers');
 
 // TODO: DEMONSTRATE API
 ```
