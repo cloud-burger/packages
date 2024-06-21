@@ -28,5 +28,8 @@
   },
   "dependencies": {
     "joi": "^17.13.3"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.7"
   }
 }
