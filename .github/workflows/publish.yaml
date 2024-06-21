@@ -33,13 +33,18 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          registry-url: https://registry.npmjs.org/
       - run: |
           git config --global user.name "${GITHUB_ACTOR}"
           git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
       - id: version
         run: echo "version=$(npm version --git-tag-version=false ${{ github.event.inputs.version }})" >> $GITHUB_OUTPUT
       - run: git add package.json && git commit -m "publish ${{ github.event.inputs.package }} ${{ steps.version.outputs.version }}"
-      - run: npm publish --registry=https://npm.pkg.github.com/ --access public
+      - run: npm install
+      - run: npm ci
+      - run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       - run: git push
