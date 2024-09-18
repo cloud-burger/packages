@@ -28,5 +28,8 @@
   "dependencies": {
     "@cloud-burger/handlers": "^1.0.0",
     "axios": "^1.7.7"
+  },
+  "devDependencies": {
+    "@types/node": "^22.5.5"
   }
 }
