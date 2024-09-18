@@ -1,7 +1,7 @@
 import { TimeoutError } from '@cloud-burger/handlers';
 import axios, { AxiosRequestConfig, Method } from 'axios';
-import { constants } from 'crypto';
-import { Agent } from 'https';
+import { constants } from 'node:crypto';
+import { Agent } from 'node:https';
 import { AxiosRequest } from '../types/request';
 import { AxiosResponse } from '../types/response';
 
