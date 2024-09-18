@@ -10,6 +10,7 @@ on:
           - handlers
           - utils
           - logger
+          - http-wrappers
       version:
         type: choice
         description: Version Increment
