@@ -13,4 +13,5 @@ export { default as TooManyRequestsError } from './errors/too-many-requests-erro
 export { default as UnauthorizedError } from './errors/unauthorized-error';
 export { default as UnprocessableEntityError } from './errors/unprocessable-entity-error';
 export { default as ValidationError } from './errors/validation-error';
+export { LambdaApiHandler } from './lambda-api';
 export * from './utils/models';
