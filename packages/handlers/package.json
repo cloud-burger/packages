@@ -1,6 +1,6 @@
 {
   "name": "@cloud-burger/handlers",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "> TODO: description",
   "author": "Daniel Aguiar <daniel_aguiar_alves@hotmail.com>",
   "homepage": "https://github.com/cloud-burger/packages#readme",
@@ -28,6 +28,8 @@
   },
   "dependencies": {
     "@cloud-burger/logger": "^0.0.7",
+    "@types/aws-lambda": "^8.10.146",
+    "aws-lambda": "^1.0.7",
     "express": "^4.19.2"
   },
   "devDependencies": {

@@ -14,9 +14,9 @@ export interface Request {
   query: {
     [key: string]: string | undefined;
   };
-  url: string;
-  host: string;
-  originalUrl: string;
+  url?: string;
+  host?: string;
+  originalUrl?: string;
 }
 
 export interface Response<T = any> {
