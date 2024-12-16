@@ -30,3 +30,19 @@ export interface Response<T = any> {
 export declare type Controller<T = any> = (
   request: Request,
 ) => Promise<Response<T> | void>;
+
+export interface AuthorizeRequest {
+  type: string;
+  methodArn: string;
+  headers: {
+    [key: string]: string | undefined;
+  };
+}
+
+export interface AuthorizeResponse {
+  principalId?: string;
+}
+
+export declare type AuthorizeController = (
+  request: AuthorizeRequest,
+) => Promise<AuthorizeResponse>;
