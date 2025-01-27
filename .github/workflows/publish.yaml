@@ -11,6 +11,7 @@ on:
           - utils
           - logger
           - http-wrappers
+          - aws-wrappers
       version:
         type: choice
         description: Version Increment
