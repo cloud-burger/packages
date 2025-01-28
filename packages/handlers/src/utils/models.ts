@@ -1,3 +1,13 @@
+import { SQSMessageAttributes } from 'aws-lambda';
+
+export interface Message<T> {
+  body: T;
+  id: string;
+  messageAttributes: SQSMessageAttributes;
+}
+
+export declare type Worker<T = any> = (messages: Message<T>[]) => Promise<void>;
+
 export interface Request {
   id: string;
   body?: any;

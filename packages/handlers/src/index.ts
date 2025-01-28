@@ -15,4 +15,5 @@ export { default as UnauthorizedError } from './errors/unauthorized-error';
 export { default as UnprocessableEntityError } from './errors/unprocessable-entity-error';
 export { default as ValidationError } from './errors/validation-error';
 export { LambdaApiHandler } from './lambda-api';
+export { LambdaSqsHandler } from './lambda-sqs';
 export * from './utils/models';
