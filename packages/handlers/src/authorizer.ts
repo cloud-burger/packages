@@ -1,3 +1,4 @@
+import logger from '@cloud-burger/logger';
 import {
   APIGatewayAuthorizerResult,
   APIGatewayRequestAuthorizerEvent,
@@ -31,6 +32,13 @@ export class AuthorizerHandler {
         principalId: principalId ?? 'not-identified',
       };
     } catch (error) {
+      logger.error({
+        message: 'Error while request authorize',
+        data: {
+          error,
+          errorString: JSON.stringify(error),
+        },
+      });
       return {
         policyDocument: {
           Version: '2012-10-17',
