@@ -1,4 +1,4 @@
-import { GetObjectCommandInput } from '@aws-sdk/client-s3';
+import { GetObjectCommand } from '@aws-sdk/client-s3';
 import { mock } from 'jest-mock-extended';
 import getSignedUrl from './get-signed-url';
 
@@ -11,9 +11,7 @@ describe('S3 - Get signed url', () => {
   });
 
   it('should get signed url', async () => {
-    const mockParams = mock<GetObjectCommandInput>({
-      Bucket: 'files',
-    });
+    const mockParams = mock<GetObjectCommand>();
 
     await getSignedUrl(mockParams);
   });
