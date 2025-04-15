@@ -27,6 +27,10 @@ export interface Request {
   url?: string;
   host?: string;
   originalUrl?: string;
+  user?: {
+    id?: string;
+    email?: string;
+  };
 }
 
 export interface Response<T = any> {

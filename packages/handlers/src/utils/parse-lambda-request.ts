@@ -20,5 +20,9 @@ export const parseLambdaRequest = (event: APIGatewayProxyEvent): Request => {
     pathParameters: removeEmpty(event.pathParameters),
     path: event.path,
     query: removeEmpty(event.queryStringParameters),
+    user: removeEmpty({
+      id: event.requestContext?.authorizer?.claims?.sub,
+      email: event.requestContext?.authorizer?.claims?.email,
+    }),
   };
 };

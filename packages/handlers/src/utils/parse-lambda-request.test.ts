@@ -12,6 +12,12 @@ describe('Parse lambda request', () => {
           identity: {
             sourceIp: '0.0.0.0',
           },
+          authorizer: {
+            claims: {
+              sub: '856ce021-b71f-41cb-8457-93ab191ba78f',
+              email: 'test@email.com',
+            },
+          },
         },
         body: JSON.stringify({
           amount: 10,
@@ -32,6 +38,10 @@ describe('Parse lambda request', () => {
       path: '/test',
       pathParameters: {},
       query: {},
+      user: {
+        email: 'test@email.com',
+        id: '856ce021-b71f-41cb-8457-93ab191ba78f',
+      },
     });
   });
 
@@ -61,6 +71,7 @@ describe('Parse lambda request', () => {
       path: '/test',
       pathParameters: {},
       query: {},
+      user: {},
     });
   });
 });
