@@ -60,3 +60,13 @@ export interface AuthorizeResponse {
 export declare type AuthorizeController = (
   request: AuthorizeRequest,
 ) => Promise<AuthorizeResponse>;
+
+export interface S3Message {
+  bucket: string;
+  key: string;
+  eventName: string;
+  eventTime: string;
+  raw: any;
+}
+
+export type S3Worker = (messages: S3Message[]) => Promise<void>;

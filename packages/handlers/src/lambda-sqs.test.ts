@@ -4,9 +4,7 @@ import { LambdaSqsHandler } from './lambda-sqs';
 
 describe('Lambda SQS Handler', () => {
   it('should execute worker successfully', async () => {
-    const worker = async () => {
-      return Promise.resolve();
-    };
+    const worker = async () => Promise.resolve();
 
     const lambdaSqsHandler = new LambdaSqsHandler(worker);
 
@@ -21,9 +19,7 @@ describe('Lambda SQS Handler', () => {
   });
 
   it('should throw invalid json error', async () => {
-    const worker = async () => {
-      return Promise.resolve();
-    };
+    const worker = async () => Promise.resolve();
 
     const lambdaSqsHandler = new LambdaSqsHandler(worker);
 
@@ -40,9 +36,7 @@ describe('Lambda SQS Handler', () => {
   });
 
   it('should throw treated error', async () => {
-    const worker = async () => {
-      return Promise.reject(new NotFoundError('Not found'));
-    };
+    const worker = async () => Promise.reject(new NotFoundError('Not found'));
 
     const lambdaSqsHandler = new LambdaSqsHandler(worker);
 
@@ -59,9 +53,7 @@ describe('Lambda SQS Handler', () => {
   });
 
   it('should throw untreated error', async () => {
-    const worker = async () => {
-      return Promise.reject(new Error('Error'));
-    };
+    const worker = async () => Promise.reject(new Error('Error'));
 
     const lambdaSqsHandler = new LambdaSqsHandler(worker);
 
