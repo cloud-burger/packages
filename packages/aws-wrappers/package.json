@@ -27,8 +27,9 @@
     "url": "https://github.com/cloud-burger/packages/issues"
   },
   "dependencies": {
-    "@aws-sdk/client-sqs": "^3.734.0",
     "@aws-sdk/client-s3": "^3.787.0",
+    "@aws-sdk/client-ses": "^3.787.0",
+    "@aws-sdk/client-sqs": "^3.734.0",
     "@aws-sdk/s3-request-presigner": "^3.787.0"
   },
   "devDependencies": {
