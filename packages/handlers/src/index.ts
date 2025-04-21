@@ -15,6 +15,6 @@ export { default as UnauthorizedError } from './errors/unauthorized-error';
 export { default as UnprocessableEntityError } from './errors/unprocessable-entity-error';
 export { default as ValidationError } from './errors/validation-error';
 export { LambdaApiHandler } from './lambda-api';
-export { LambdaS3Handler } from './lambda-s3';
+export { LambdaS3Handler, S3Message, S3Worker } from './lambda-s3';
 export { LambdaSqsHandler } from './lambda-sqs';
 export * from './utils/models';
