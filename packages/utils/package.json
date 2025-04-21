@@ -1,6 +1,6 @@
 {
   "name": "@cloud-burger/utils",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "> TODO: description",
   "author": "Daniel Aguiar <daniel_aguiar_alves@hotmail.com>",
   "homepage": "https://github.com/cloud-burger/packages#readme",
@@ -27,9 +27,11 @@
     "url": "https://github.com/cloud-burger/packages/issues"
   },
   "dependencies": {
-    "joi": "^17.13.3"
+    "joi": "^17.13.3",
+    "nodemailer": "^6.10.1"
   },
   "devDependencies": {
-    "@types/node": "^20.14.7"
+    "@types/node": "^20.14.7",
+    "@types/nodemailer": "^6.4.17"
   }
 }
